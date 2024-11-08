@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Definindo a codificação de caracteres e a configuração de responsividade para a página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G2 News - Blog de Noticias</title>
+    <!-- Importação do arquivo de estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script src ="funcoes.js"></script>
+<body>
+    <!-- Container principal que envolve todo o conteúdo da página -->
+    <div class="container">
+        
+        <!-- Cabeçalho do site com o nome e o menu de navegação -->
+        <header class="header">
+            <!-- Logo do portal, centralizado na parte superior -->
+            <div class="logo">
+                <h1><span class="g2">G2</span> News</h1>
+            </div>
+
+            <!-- Menu de navegação com links para diferentes seções do portal -->
+            <nav class="menu">
+                <ul>
+                    <!-- Links de navegação, utilizando <a> para navegar entre as páginas -->
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="brasil.html">Brasil</a></li>
+                    <li><a href="mundo.html">Mundo</a></li>
+                    <li><a href="economia.html">Economia</a></li>
+                    <li><a href="esportes.html">Esportes</a></li>
+                    <li><a href="entretenimento.html">Entretenimento</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Área principal de conteúdo -->
+        <div class="content">
+            <!-- Seção principal onde as notícias são exibidas -->
+            <main class="main-content">
+
+                <!-- Notícia principal em destaque -->
+                <article class="highlight-main">
+                    <!-- Imagem da notícia principal -->
+                    <img id = "fotoPrincipal" src="Img/FOTOSINICIO/4_tiktok.jpg">
+                    <div class="text-content">
+                        <!-- Título e resumo da notícia principal -->
+                        <h3><a href="https://g1.globo.com/tecnologia/noticia/2024/11/04/tiktok-e-processado-por-promocao-ao-suicidio-de-adolescentes-por-7-familias-na-franca.ghtml">TikTok é processado por ‘promoção ao suicídio’ de adolescentes por 7 famílias na França</a></h3>
+                        <p>Famílias acusam a rede social de expor crianças a inúmeros vídeos que promovem suicídio, automutilação e distúrbios alimentares; entenda o caso.</p>
+                    </div>
+                </article>
+
+                <!-- Linha que exibe notícias menores lado a lado -->
+                <div class="highlight-row">
+                    <!-- Primeira notícia pequena -->
+                    <article class="highlight-small">
+                        <img src="Img/FOTOSINICIO/2_ENEM.jpg">
+                        <div class="text-content">
+                            <h3><a href="https://g1.globo.com/educacao/enem/2024/noticia/2024/11/04/10-questoes-mais-dificeis-do-enem-2024-trazem-escultura-de-cabecas-xilogravura-e-empirismo-quantas-voce-acertaria.ghtml"> Quantas você acertaria?</a></h3>
+                        </div>
+                    </article>
+                    <!-- Segunda notícia pequena -->
+                    <article class="highlight-small">
+                        <img src="Img/FOTOSINICIO/3_medievais.jpg">
+                        <div class="text-content">
+                            <h3><a href="https://www.nexojornal.com.br/externo/2024/11/04/as-crencas-sobrenaturais-dos-povos-medievais">As crenças medievais</a></h3>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Outras notícias listadas abaixo da principal e das menores -->
+                <article class="highlight">
+                    <img src="Img/FOTOSINICIO/5_hamilton.jpg">
+                    <div class="text-content">
+                        <h3><a href=" https://www.nexojornal.com.br/expresso/2024/11/02/lewis-hamilton-piloto-f1-relacao-brasil">O que faz Lewis Hamilton ser tão adorado no Brasil</a></h3>
+                        <p>Piloto britânico irá dirigir McLaren do título mundial de 1990 de Ayrton Senna do GP de São Paulo. Heptacampeão recebeu o título de cidadão brasileiro honorário em 2022</p>
+                    </div>
+                </article>
+                <article class="highlight">
+                    <img src="Img/FOTOSINICIO/trump.jpg">
+                    <div class="text-content">
+                        <h3><a href="https://g1.globo.com/mundo/eleicoes-nos-eua/2024/noticia/2024/11/06/trump-eleito-compare-as-ultimas-pesquisa-e-o-resultado-nas-urnas.ghtml">Trump eleito: compare as últimas pesquisas e o resultado nas urnas</a></h3>
+                        <p>Levantamentos mostravam empate técnico tanto no conjunto do país como nos estados-chave, que são os que definem a eleição. Trump venceu em todos os cenários, segundo projeção.</p>
+                    </div>
+                </article>
+                <article class="highlight">
+                    <img src="Img/FOTOSINICIO/inteligenciaArtificial.jpg">
+                    <div class="text-content">
+                        <h3><a href="https://g1.globo.com/tecnologia/noticia/2024/11/06/inteligencia-artificial-sera-uma-das-areas-de-ti-mais-demandadas-no-brasil-em-2025-veja-salarios.ghtml">Inteligência artificial será uma das áreas de TI mais demandadas no Brasil em 2025; veja salários</a></h3>
+                        <p>Com investimentos crescentes, trabalho com IA oferecerá salários de até R$ 20 mil no próximo ano.</p>
+                    </div>
+                </article>
+            </main>
+
+            <!-- Barra lateral para exibição de anúncios -->
+            <aside class="ads">
+                <!-- Anúncio médio (imagem com link para a promoção) -->
+                <div class="ad ad-medium">
+                    <img onmouseover="mudaFoto('Img/anuncio4.jpg')" onmouseout="mudaFoto('Img/anuncio1.jpg')" id = "anuncio1" src="Img/anuncio1.jpg">
+                </div>
+                <!-- Anúncio pequeno -->
+                <div class="ad ad-small">
+                    <img id = "anuncio2" src="Img/anuncio3.jpg" onmouseover="mudaFoto2('Img/anuncio3.jpg')" onmouseout="mudaFoto2('Img/anuncio5.jpg')"  >
+                </div>
+                <!-- Anúncio grande -->
+                <div class="ad ad-large">
+                    <img id = "anuncio3" src="Img/anuncio6.jpg" onmouseover="mudaFoto3('Img/anuncio7.jpg')" onmouseout="mudaFoto3('Img/anuncio6.jpg')" >
+                </div>
+            </aside>
+        </div>
+
+        <!-- Rodapé com direitos autorais -->
+        <footer>
+            <p>2024 G2 News - Todos os direitos reservados</p>
+        </footer>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G2 News - Publique sua notícia</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Estilos para as mensagens de sucesso e erro */
+        .mensagem {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none; /* Oculta as mensagens inicialmente */
+        }
+
+        .sucesso {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .erro {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+
+    <script type="module">
+        // Importação das funções necessárias do Firebase SDK
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBggYUi1d2O9ETWlWzNa6ydrfJ_smGy3F4",
+            authDomain: "projeto-faculdade-abcd1234.firebaseapp.com",
+            projectId: "projeto-faculdade-abcd1234",
+            storageBucket: "projeto-faculdade-abcd1234.appspot.com",
+            messagingSenderId: "118104771950",
+            appId: "1:118104771950:web:f808733bc2b77e34b0c57f",
+            measurementId: "G-3BLBCV6R94"
+        };
+
+        // Inicialize o Firebase e Firestore
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Adiciona o evento de envio do formulário
+            document.querySelector('.form_public').addEventListener('submit', async (e) => {
+                e.preventDefault();  // Impede o recarregamento da página
+
+                // Obtém os valores do formulário
+                const name = document.getElementById('name').value || "Anônimo";
+                const email = document.getElementById('email').value;
+                const historia = document.getElementById('historia').value;
+
+                try {
+                    // Adiciona o documento à coleção 'noticias' no Firestore
+                    await addDoc(collection(db, "noticias"), {
+                        nome: name,
+                        email: email,
+                        historia: historia,
+                        timestamp: serverTimestamp()
+                    });
+
+                    // Exibe a mensagem de sucesso
+                    exibirMensagem("Notícia enviada com sucesso!", "sucesso");
+
+                    // Limpa os campos do formulário
+                    document.getElementById('name').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('historia').value = '';
+                    document.getElementById('concordar_termos').checked = false;
+                } catch (error) {
+                    console.error("Erro ao enviar a notícia: ", error);
+                    exibirMensagem("Houve um erro ao enviar a notícia.", "erro");
+                }
+            });
+        });
+
+        // Função para exibir a mensagem de sucesso ou erro
+        function exibirMensagem(mensagem, tipo) {
+            const divMensagem = document.getElementById('mensagem');
+            divMensagem.textContent = mensagem;
+            divMensagem.className = 'mensagem ' + tipo;
+            divMensagem.style.display = 'block'; // Exibe a mensagem
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <h1><span class="g2">G2</span> News</h1>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="brasil.html">Brasil</a></li>
+                    <li><a href="mundo.html">Mundo</a></li>
+                    <li><a href="economia.html">Economia</a></li>
+                    <li><a href="esportes.html">Esportes</a></li>
+                    <li><a href="entretenimento.html">Entretenimento</a></li>
+                    <li><a href="publique.html">Publique</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <form class="form_public">
+            <input type="text" id="name" name="name" maxlength="60" placeholder="Se quiser se identificar, insira seu nome...">
+            <input type="email" id="email" name="email" placeholder="Insira um endereço de email..." required>
+            <textarea id="historia" name="historia" placeholder="Conte a sua notícia..." minlength="200" required></textarea>
+            
+            <div class="terms-container">
+                <input type="checkbox" id="concordar_termos" required>
+                <p>Concordo com os <a href="#" style="color: #333; text-decoration: none;"><b>Termos & Condições</b>.</a></p>
+            </div>
+            
+            <button type="submit">Enviar</button>
+        </form>
+
+        <!-- Div para exibir a mensagem de sucesso ou erro -->
+        <div id="mensagem"></div>
+    </div>
+
+    <footer>
+        <p>2024 G2 News - Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>

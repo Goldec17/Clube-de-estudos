@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:wght@300;400;600;700;900&display=swap');
+
+/* Reset básico para remover margens e padding padrão de todos os elementos */
+* {
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o padding padrão */
+    box-sizing: border-box; /* Garante que o padding e as bordas sejam incluídos na largura e altura dos elementos */
+}
+
+h3 a {
+    color: inherit; /* tira o azul do link e deixa a cor atribuida */
+    text-decoration: none; /* Remove o sublinhado */
+   
+}
+
+
+/* Configurações gerais do corpo e HTML */
+html, body {
+    height: 100%; /* Define a altura total da página */
+    font-family: "Noticia Text", sans-serif; /* Define a fonte padrão */
+    color: #333; /* Cor padrão do texto */
+    line-height: 1.6; /* Espaçamento entre linhas para melhor legibilidade */
+    text-align: justify;/*alinhando texto*/
+}
+
+/* Estrutura do container principal */
+.container {
+    display: flex; /* Habilita o layout flexível */
+    flex-direction: column; /* Coloca o conteúdo em uma coluna */
+    min-height: 100vh; /* Define altura mínima como a altura total da tela */
+}
+
+/* Estilo do cabeçalho */
+.header {
+    background-color: #7d0000; /* Fundo vermelho */
+    color: #fff; /* Texto branco */
+    padding: 10px; /* Espaçamento interno */
+    position: relative; /* Permite posicionamento absoluto dos elementos filhos */
+    display: flex; /* Ativa layout flexível */
+    justify-content: center; /* Centraliza conteúdo no eixo horizontal */
+    align-items: center; /* Alinha verticalmente no centro */
+}
+
+/* Estilo para o logo do portal */
+.header .logo {
+    text-align: center; /* Centraliza o logo */
+    font-size: 1.5em; /* Aumenta o tamanho da fonte */
+    font-family: "Noticia text", sans-serif;
+    margin-bottom: 10px;/*espaçamento inferior*/
+}
+
+/* Estilo para o menu de navegação */
+.header .menu {
+    position: absolute; /* Posição absoluta para reposicionar o menu */
+    bottom: 10px; /* Posiciona o menu a 10px da parte inferior */
+    right: 20px; /* Posiciona o menu a 20px do lado direito */
+}
+
+
+.menu li:hover {
+    color: #ddd; /* Cor de destaque ao passar o mouse */
+    transform: translateY(-5px); /* Move o link para cima */
+}
+
+.header .menu ul {
+    list-style-type: none; /* Remove os marcadores de lista */
+    display: flex; /* Exibe os itens da lista em linha */
+    gap: 15px; /* Espaçamento entre itens do menu */
+
+}
+
+.header .menu a {
+    color: #fff; /* Define cor branca para links */
+    text-decoration: none; /* Remove sublinhado dos links */
+    font-weight: bold; /* Deixa o texto dos links em negrito */
+}
+
+/* Estrutura de conteúdo principal */
+.content {
+    display: flex; /* Ativa o layout flexível */
+    flex: 1; /* Expande a área de conteúdo para ocupar o espaço disponível */
+}
+
+/* Área principal de conteúdo */
+.main-content {
+    padding: 20px; /* Espaçamento interno */
+    background-color: #f1f1f1; /* Fundo cinza claro */
+    flex: 3; /* Define que essa área ocupa 3x o espaço do container de anúncios */
+}
+
+/* Estilo para a notícia principal */
+.highlight-main {
+    display: flex; /* Ativa layout flexível */
+    background-color: #fff; /* Fundo branco */
+    padding: 0px; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Borda cinza clara */
+    width: 90%; /* Aumenta a largura do container */
+    height: 27%; /* Define a altura da notícia principal */
+    margin: 40px auto; /* Margem superior e inferior de 40px e centraliza horizontalmente */
+    margin-bottom: 45px; /* Espaçamento inferior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    gap: 15px; /* Espaçamento entre imagem e texto */
+    border-radius: 15px; /* Bordas arredondadas */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse o container */
+}
+
+/* Estilo da imagem na notícia principal */
+.highlight-main img {
+    width: 45%; /* A imagem ocupa 45% da largura do container */
+    height: auto; /* Altura ajustada automaticamente para manter proporção */
+    object-fit: cover; /* Imagem se ajusta ao container sem distorção */
+}
+.highlight-main img:hover {
+    transform: scale(1.03);
+}
+/* Estilo do conteúdo textual da notícia principal */
+.highlight-main .text-content {
+    flex: 1; /* Permite que o texto ocupe o espaço restante */
+    margin-right: 20px;
+}
+.highlight-main h3:hover {
+    color: #a30902; /* Cor de hover */
+    cursor: pointer; /* Muda o cursor */
+    transform: translateY(-5px); /* texto se move ao passar o mouse */}
+
+.highlight-main h3 {
+    margin-top: 7%; /* Remove margem superior do título */
+    color: #7d0000; /* Cor do título em vermelho */
+    font-size: 1.8em; /* Aumenta o tamanho da fonte do título */
+    
+}
+
+/* Linha para exibir as notícias 2 e 3 lado a lado */
+.highlight-row {
+    display: flex; /* Exibe as notícias lado a lado */
+    gap: 4px; /* Espaçamento entre os containers das notícias 2 e 3 */
+    margin-top: 20px; /* Margem superior */
+}
+.highlight-row h3{
+    color:#ffffff;
+
+}
+
+/* Estilo individual para as notícias 2 e 3 */
+.highlight-small {
+    position: relative; /* Necessário para posicionar o texto sobre a imagem */
+    flex: 1; /* Ocupa o mesmo espaço em largura */
+    background-color: #ddd; /* Fundo cinza claro */
+    border: 1px solid #ccc; /* Borda cinza */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse o container */
+    width: 45%; /* Reduzindo a largura dos containers das notícias 2 e 3 */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-bottom: 45px; /* Espaçamento inferior */
+    max-width: 300px; /* Largura máxima */
+    min-height: 200px; /* Altura mínima */
+    border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Estilo para a imagem das notícias 2 e 3 */
+.highlight-small img {
+    width: 100%; /* Imagem ocupa toda a largura do container */
+    height: 100%; /* Imagem ocupa toda a altura do container */
+    object-fit: cover; /* A imagem preenche o container sem distorção */
+    transition: transform 0.3s ease; /* Suaviza a transformação */
+}
+
+/* Efeito de zoom ao passar o mouse sobre a imagem */
+.highlight-small img:hover {
+    transform: scale(1.1); /* Aumenta a escala da imagem em 10% ao passar o mouse */
+}
+
+/* Texto exibido sobre a imagem nas notícias 2 e 3 */
+.highlight-small .text-content {
+    position: absolute; /* Posicionamento absoluto sobre a imagem */
+    bottom: 10px; /* Posiciona 10px acima da borda inferior */ 
+    left: 50%; /* Posiciona o texto na metade da largura do container */
+    transform: translateX(-50%); /* Centraliza o texto em relação ao ponto (50%, 50%) */
+    text-align: center;
+    padding: 5px 10px; /* Espaçamento interno para o texto */
+    border-radius: 5px; /* Arredonda as bordas do texto */
+}
+
+.highlight-small h3 {
+    font-size: 1.2rem; /* Aumenta o tamanho do título */
+    margin: 0; /* Remove margem */
+    color: #dbdada; /* Texto branco */
+}
+
+/* Estilo para as outras notícias (4, 5, 6) */
+.highlight {
+    display: flex; /* Organiza os elementos internos (imagem e texto) lado a lado */
+    padding: 0px; /* Remove o padding interno */
+    gap: 10px; /* Espaçamento entre a imagem e o texto */
+    width: 70%; /* Define a largura do container como 70% da tela ou do container pai */
+    height: 15%; /* Define uma altura para o artigo */
+    margin: 20px auto; /* Define margem superior e inferior de 20px, e centraliza o artigo horizontalmente */
+    margin-bottom: 0px; /* Não há espaço extra abaixo */
+    margin-left: 7%; /* Mover o container mais para a esquerda, ajuste conforme necessário */
+}
+.highlight h3:hover {
+    color: #a30902; /* Cor de hover */
+    cursor: pointer; /* Muda o cursor */
+    transform: translateY(-5px); /* texto se move ao passar o mouse */
+}
+
+/* Estilo para adicionar linha apenas entre as notícias 5 e 6 */
+.highlight + .highlight {
+    border-top: 1px solid #b8b8b8; /* Linha fina entre os containers */
+    padding-top: 15px; /* Espaçamento superior para destacar a linha */
+}
+
+/* Estilo da imagem das outras notícias */
+.highlight img {
+    width: 45%; /* Imagem ocupa 45% da largura do container */
+    height: auto; /* Altura ajustada automaticamente para manter proporção */
+    border-radius: 15px; /* Bordas arredondadas */
+}
+
+/* Conteúdo textual das outras notícias */
+.highlight .text-content {
+    flex: 1; /* Texto ocupa o espaço restante */
+}
+
+.highlight h3 {
+    margin-top: 2%; /* Remove a margem superior */
+    color: #7d0000; /* Título em vermelho */
+    font-size: 1.5em; /* Aumenta o tamanho do título */
+}
+
+/* Estilo dos containers de anúncios */
+.ads {
+    padding: 20px; /* Espaçamento interno */
+    background-color: #f1f1f1; /* Fundo branco */
+    width: 250px; /* Define largura fixa */
+}
+
+/* Blocos de anúncios com alturas diferentes */
+.ad {
+    position: relative;
+    background-color: #eee; /* Fundo cinza claro */
+    border: 1px solid #000000; /* Borda preta */
+    margin-bottom: 45%; /* Espaçamento inferior entre os anúncios */
+    margin-top: 40%; /* Ajuste a margem conforme desejado */
+    width: 100%; /* Largura total */
+    overflow: hidden; /* Impede que o conteúdo ultrapasse os limites do container */
+}
+
+.ad img {
+    width: 100%; /* Faz a imagem ocupar toda a largura do container */
+    height: 100%; /* Mantém a proporção da imagem */
+    object-fit: cover; /* A imagem preenche o container sem distorção */
+}
+
+/* Tamanhos específicos para os anúncios */
+.ad-large {
+    height: 500px; /* Altura do primeiro anúncio */
+}
+
+.ad-medium {
+    height: 300px; /* Altura do segundo anúncio */
+}
+
+.ad-small {
+    height: 240px; /* Altura do terceiro anúncio */
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color:#7d0000; /* Cor de fundo escura */
+    color: white; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    padding: 15px; /* Espaçamento interno */
+    position: relative; /* Normaliza a posição do footer */
+    bottom: 0; /* Coloca o footer no final da página */
+    width: 100%; /* Garante que o footer ocupe toda a largura */
+}
+
+.form_public {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    width: 60%;
+    margin: auto;
+}
+
+.form_public input[type="text"],
+.form_public input[type="email"],
+.form_public textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form_public input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.form_public p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.form_public button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form_public button:hover {
+    background-color: #45a049;
+}
+
+.terms-container {
+    display: flex;
+    align-items: center;
+}
+
+.terms-container input[type="checkbox"] {
+    margin-right: 5px;
+}
